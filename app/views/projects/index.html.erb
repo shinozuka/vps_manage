@@ -22,7 +22,7 @@
       <% end %>
     </table>
     <br />
-    <%= will_paginate(@projects) -%>
+    <%= will_paginate @projects, :previous_label=>'<', :next_label=>'>' %>
   </div>
 </div>
 

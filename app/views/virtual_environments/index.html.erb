@@ -32,7 +32,7 @@
       <% end %>
     </table>
     <br />
-    <%= will_paginate(@virtual_environments) -%>
+    <%= will_paginate @virtual_environments, :previous_label=>'<', :next_label=>'>' %>
 </div>
 </div>
 

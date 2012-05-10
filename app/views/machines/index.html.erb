@@ -24,7 +24,7 @@
       <% end %>
     </table>
     <br />
-    <%= will_paginate(@machines) -%>
+    <%= will_paginate @diaries, :previous_label=>'<', :next_label=>'>' %> 
   </div>
 </div>
 
