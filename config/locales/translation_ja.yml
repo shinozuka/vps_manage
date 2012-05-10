@@ -35,6 +35,7 @@ ja:
     new: "%{model}の新規作成"
     editing: "%{model}の編集"
     showing: "%{model}の表示"
+    deleting: "%{model}の削除"
     created_at: "作成時刻"
     updated_at: "更新時刻"
     are_you_sure: "削除しますか？"
