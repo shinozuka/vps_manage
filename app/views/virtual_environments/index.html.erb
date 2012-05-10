@@ -1,0 +1,43 @@
+<div id="content_detail">
+  <h4><%= t('page.listing', :model => t('activerecord.models.virtual_environment')) %></h5>
+  <p id="notice"><%= notice %></p>
+
+  <div id="content_list">
+    <table class="index">
+      <tr>
+        <th><%= t('activerecord.attributes.virtual_environment.name') %></th>
+        <th><%= t('activerecord.models.machine') %></th>
+        <th><%= t('activerecord.attributes.virtual_environment.ip') %></th>
+        <th><%= t('activerecord.attributes.virtual_environment.tap') %></th>
+        <th><%= t('activerecord.attributes.virtual_environment.mac') %></th>
+        <th><%= t('activerecord.attributes.virtual_environment.vnc') %></th>
+        <th><%= t('activerecord.attributes.virtual_environment.image_name') %></th>
+        <th></th>
+      </tr>
+
+      <% @virtual_environments.each do |virtual_environment| %>
+        <tr class="line<%= cycle("0", "1") -%>">
+          <td><%= link_to virtual_environment.name, virtual_environment %></td>
+          <td><%= link_to virtual_environment.machine.name, virtual_environment.machine if virtual_environment.machine %></td>
+          <td><%= virtual_environment.ip %></td>
+          <td><%= virtual_environment.tap %></td>
+          <td><%= virtual_environment.mac %></td>
+          <td><%= virtual_environment.vnc %></td>
+          <td><%= virtual_environment.image_name %></td>
+          <td>
+            <%= link_to t('page.edit'), edit_virtual_environment_path(virtual_environment) %>
+            <%= link_to t('page.destroy'), virtual_environment, confirm: t('page.are_you_sure'), method: :delete %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <br />
+    <%= will_paginate(@virtual_environments) -%>
+</div>
+</div>
+
+<div id="submenu">
+  <ul>
+    <li><%= link_to t('page.new', :model => t('activerecord.models.virtual_environment')), new_virtual_environment_path %></li>
+  </ul>
+</div>

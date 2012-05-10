@@ -1,0 +1,35 @@
+<div id="content_detail">
+<h4><%= t('page.showing', :model => t('activerecord.models.machine')) %></h4>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t('activerecord.attributes.machine.name') %>:</b>
+  <%= @machine.name %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.machine.cpu') %>:</b>
+  <%= @machine.cpu %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.machine.memory') %>:</b>
+  <%= @machine.memory %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.machine.note') %>:</b>
+  <%= @machine.note %>
+</p>
+
+<br />
+<%= render 'virtual_environments/virtual_environment_list', :virtual_environments => @machine.virtual_environments %>
+</div>
+
+<div id="submenu">
+  <ul>
+    <li><%= link_to t('page.new', :model => t('activerecord.models.machine')), new_machine_path %></li>
+    <li><%= link_to t('page.editing', :model => t('activerecord.models.machine')), edit_machine_path(@machine) %></li>
+    <li><%= link_to t('page.listing', :model => t('activerecord.models.machine')), machines_path %></li>
+  </ul>
+</div>

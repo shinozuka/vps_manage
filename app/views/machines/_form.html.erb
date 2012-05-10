@@ -1,0 +1,33 @@
+<%= form_for(@machine) do |f| %>
+  <% if @machine.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= t(:header, :model => t(:machine, :scope => [:activerecord, :models]), :count => @machine.errors.count, :scope => [:activerecord, :errors, :template]) %></h2>
+
+      <ul>
+      <% @machine.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><abbr id="required">*</abbr><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :cpu %><br />
+    <%= f.text_field :cpu %>
+  </div>
+  <div class="field">
+    <%= f.label :memory %><br />
+    <%= f.text_field :memory %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br />
+    <%= f.text_area :note %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

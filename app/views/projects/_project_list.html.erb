@@ -1,0 +1,10 @@
+<div>
+  <b><%= t('page.listing', :model => t('activerecord.models.project')) -%></b>
+  <table class="index">
+    <%- projects.each do |project| -%>
+      <tr class="line<%= cycle("0", "1") -%>">
+        <td><%= link_to project.name, project %></td>
+      </tr>
+    <%- end -%>
+  </table>
+</div>

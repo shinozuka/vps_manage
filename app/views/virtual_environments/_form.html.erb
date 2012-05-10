@@ -1,0 +1,66 @@
+<%= form_for(@virtual_environment) do |f| %>
+  <% if @virtual_environment.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= t(:header, :model => t(:virtual_environment, :scope => [:activerecord, :models]), 
+          :count => @virtual_environment.errors.count, :scope => [:activerecord, :errors, :template]) %>
+      </h2>
+      <ul>
+        <% @virtual_environment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div style="float:left; padding-right: 100px;">
+    <div class="field" style="">
+      <%= f.label :name %><abbr id="required">*</abbr><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label t('activerecord.attributes.machine.name') %><br />
+      <%= f.select(:machine_id, @machines.collect{|machine| [machine.name, machine.id]}, :include_blank => true) %>
+    </div>
+    <div class="field">
+      <%= f.label :ip %><br />
+      <%= f.text_field :ip %>
+    </div>
+    <div class="field">
+      <%= f.label :tap %><br />
+      <%= f.text_field :tap %>
+    </div>
+    <div class="field">
+      <%= f.label :mac %><br />
+      <%= f.text_field :mac %>
+    </div>
+    <div class="field">
+      <%= f.label :vnc %><br />
+      <%= f.text_field :vnc %>
+    </div>
+    <div class="field">
+      <%= f.label :image_name %><br />
+      <%= f.text_field :image_name %>
+    </div>
+  </div>
+
+  <div>
+    <div class="field">
+      <%= f.label t('activerecord.models.project') %><br />
+      <% @projects.each do |project| %>
+        <%= check_box_tag "projects[]", project.id, @project_ids.index(project.id) ? true : false %><%= project.name %><br />
+      <% end %>
+    </div>
+  </div>
+  <br style="clear:both;" />
+
+  <div>
+    <div class="field">
+      <%= f.label :note %><br />
+      <%= f.text_area :note %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>

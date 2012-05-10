@@ -1,0 +1,35 @@
+<div id="content_detail">
+<h4><%= t('page.showing', :model => t('activerecord.models.project')) %></h4>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t('activerecord.attributes.project.name') %>:</b>
+  <%= @project.name %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.project.note') %>:</b>
+  <%= @project.note %>
+</p>
+
+<p>
+  <b><%= t('page.created_at') %></b>
+  <%= l(@project.created_at) %>
+</p>
+
+<p>
+  <b><%= t('page.updated_at') %></b>
+  <%= l(@project.updated_at) %>
+</p>
+
+<br />
+<%= render 'virtual_environments/virtual_environment_list', :virtual_environments => @project.virtual_environments %>
+</div>
+
+<div id="submenu">
+  <ul>
+    <li><%= link_to t('page.new', :model => t('activerecord.models.project')), new_project_path %></li>
+    <li><%= link_to t('page.editing', :model => t('activerecord.models.project')), edit_project_path(@project) %></li>
+    <li><%= link_to t('page.listing', :model => t('activerecord.models.project')), projects_path %></li>
+  </ul>
+</div>

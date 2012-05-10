@@ -1,0 +1,35 @@
+<div id="content_detail">
+  <h4><%= t('page.listing', :model => t('activerecord.models.machine')) %></h4>
+  <p id="notice"><%= notice %></p>
+
+  <div id="content_list">
+    <table class="index">
+      <tr>
+        <th><%= t('activerecord.attributes.machine.name') %></th>
+        <th><%= t('activerecord.attributes.machine.cpu') %></th>
+        <th><%= t('activerecord.attributes.machine.memory') %></th>
+        <th></th>
+      </tr>
+
+      <% @machines.each do |machine| %>
+        <tr class="line<%= cycle("0", "1") -%>">
+          <td><%=link_to machine.name, machine %></td>
+          <td><%= machine.cpu %></td>
+          <td><%= machine.memory %></td>
+          <td>
+            <%= link_to t('page.edit'), edit_machine_path(machine) %>
+            <%= link_to t('page.destroy'), machine, confirm: t('page.are_you_sure'), method: :delete %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <br />
+    <%= will_paginate(@machines) -%>
+  </div>
+</div>
+
+<div id="submenu">
+  <ul>
+    <li><%= link_to t('page.new', :model => t('activerecord.models.machine')), new_machine_path %></li>
+  </ul>
+</div>

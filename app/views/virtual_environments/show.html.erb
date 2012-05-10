@@ -1,0 +1,65 @@
+<div id="content_detail">
+<h4><%= t('page.showing', :model => t('activerecord.models.virtual_environment')) %></h4>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t('activerecord.attributes.virtual_environment.name') %>:</b>
+  <%= @virtual_environment.name %>
+</p>
+
+<p>
+  <b><%= t('activerecord.models.machine') %>:</b>
+  <%= link_to @virtual_environment.machine.name, @virtual_environment.machine if @virtual_environment.machine %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.virtual_environment.ip') %>:</b>
+  <%= @virtual_environment.ip %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.virtual_environment.tap') %>:</b>
+  <%= @virtual_environment.tap %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.virtual_environment.mac') %>:</b>
+  <%= @virtual_environment.mac %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.virtual_environment.vnc') %>:</b>
+  <%= @virtual_environment.vnc %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.virtual_environment.image_name') %>:</b>
+  <%= @virtual_environment.image_name %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.virtual_environment.note') %>:</b>
+  <%= @virtual_environment.note %>
+</p>
+
+<p>
+  <b><%= t('page.created_at') %>:</b>
+  <%= l(@virtual_environment.created_at) %>
+</p>
+
+<p>
+  <b><%= t('page.updated_at') %>:</b>
+  <%= l(@virtual_environment.updated_at) %>
+</p>
+
+<br />
+<%= render 'projects/project_list', :projects => @virtual_environment.projects %>
+</div>
+
+<div id="submenu">
+  <ul>
+    <li><%= link_to t('page.new', :model => t('activerecord.models.virtual_environment')), new_virtual_environment_path %></li>
+    <li><%= link_to t('page.editing', :model => t('activerecord.models.virtual_environment')), edit_virtual_environment_path(@virtual_environment) %></li>
+    <li><%= link_to t('page.listing', :model => t('activerecord.models.virtual_environment')), virtual_environments_path %></li>
+  </ul>
+</div>

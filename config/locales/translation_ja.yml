@@ -1,0 +1,47 @@
+ja:
+  activerecord:
+    models:
+      machine: マシン
+      project: プロジェクト
+      virtual_environment: 仮想環境
+
+    attributes:
+      machine:
+        memory: メモリ
+        name: マシン名
+        note: 注記
+        cpu: CPU
+      project:
+        name: プロジェクト名
+        note: 注記
+      virtual_environment:
+        image_name: イメージ名
+        ip: IPアドレス
+        mac: MACアドレス
+        name: ドメイン名
+        note: 注記
+        tap: TAP
+        vnc: VNC番号
+
+  page:
+    back: "戻る"
+    show: "表示"
+    edit: "編集"
+    destroy: "削除"
+    created_at: "作成時刻"
+    updated_at: "更新時刻"
+    are_you_sure: "削除しますか？"
+    listing: "%{model}の一覧"
+    new: "%{model}の新規作成"
+    editing: "%{model}の編集"
+    showing: "%{model}の表示"
+    created_at: "作成時刻"
+    updated_at: "更新時刻"
+    are_you_sure: "削除しますか？"
+    system_name: "VPN MANAGE"
+    copyright: ""
+
+  controller:
+    successfully_created: "%{model}は正常に作成されました。"
+    successfully_updated: "%{model}は正常に更新されました。"
+    successfully_deleted: "%{model}は正常に削除されました。"

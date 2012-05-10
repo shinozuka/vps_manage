@@ -1,0 +1,10 @@
+<div id="content_detail">
+  <h4><%= t('page.new', :model => t('activerecord.models.virtual_environment')) -%></h4>
+  <%= render 'form' %>
+</div>
+
+<div id="submenu">
+  <ul>
+    <li><%= link_to t('page.listing', :model => t('activerecord.models.virtual_environment')), virtual_environments_path %></li>
+  </ul>
+</div>

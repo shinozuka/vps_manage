@@ -1,0 +1,11 @@
+<div id="content_detail">
+  <h4><%= t('page.editing', :model => t('activerecord.models.machine')) -%></h4>
+  <%= render 'form' %>
+</div>
+
+<div id="submenu">
+  <ul>
+    <li><%= link_to t('page.showing', :model => t('activerecord.models.machine')), @machine %></li>
+    <li><%= link_to t('page.listing', :model => t('activerecord.models.machine')), machines_path %></li>
+  </ul>
+</div>

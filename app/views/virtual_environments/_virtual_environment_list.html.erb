@@ -1,0 +1,10 @@
+<div>
+  <b><%= t('page.listing', :model => t('activerecord.models.virtual_environment')) -%></b>
+  <table class="index">
+    <%- virtual_environments.each do |virtual_environment| -%>
+      <tr class="line<%= cycle("0", "1") -%>">
+        <td><%= link_to virtual_environment.name, virtual_environment %></td>
+      </tr>
+    <%- end -%>
+  </table>
+</div>
