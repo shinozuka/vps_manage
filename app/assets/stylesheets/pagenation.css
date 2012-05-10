@@ -1,0 +1,18 @@
+div.pagination {
+  padding: 5px;
+}
+
+div.pagination a {
+  padding: 5px;
+}
+
+div.pagination em {
+  font-weight: bold;
+  font-style: normal;
+  padding: 5px;
+}
+
+div.pagination span.disabled {
+  padding: 5px;
+}
+
