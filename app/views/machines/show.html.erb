@@ -30,6 +30,9 @@
   <ul>
     <li><%= link_to t('page.new', :model => t('activerecord.models.machine')), new_machine_path %></li>
     <li><%= link_to t('page.editing', :model => t('activerecord.models.machine')), edit_machine_path(@machine) %></li>
+    <% if @machine.destroy? %>
+      <li><%= link_to t('page.deleting', :model => t('activerecord.models.machine')), @machine, confirm: t('page.are_you_sure'), method: :delete %></li>
+    <% end %>
     <li><%= link_to t('page.listing', :model => t('activerecord.models.machine')), machines_path %></li>
   </ul>
 </div>

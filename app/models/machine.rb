@@ -9,4 +9,9 @@ class Machine < ActiveRecord::Base
   def self.per_page
     10
   end
+
+  def destroy?
+    return false if self.virtual_environments.size > 0
+    true
+  end
 end

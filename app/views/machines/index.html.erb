@@ -18,7 +18,7 @@
           <td><%= machine.memory %></td>
           <td>
             <%= link_to t('page.edit'), edit_machine_path(machine) %>
-            <%= link_to t('page.destroy'), machine, confirm: t('page.are_you_sure'), method: :delete %>
+            <%= link_to t('page.destroy'), machine, confirm: t('page.are_you_sure'), method: :delete if machine.destroy? %>
           </td>
         </tr>
       <% end %>
