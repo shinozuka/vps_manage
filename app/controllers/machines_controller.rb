@@ -2,7 +2,19 @@ class MachinesController < ApplicationController
   # GET /machines
   # GET /machines.json
   def index
-    @machines = Machine.page(params[:page])
+    sort = {:sort_by => 'created_at', :order => 'asc'}
+    case params[:sort_by]
+    when 'name'
+      sort[:sort_by] = 'name'
+    end    
+    case params[:order]
+    when 'asc'
+      sort[:order] = 'asc'
+    when 'desc'
+      sort[:order] = 'desc'
+    end
+
+    @machines = Machine.order("#{sort[:sort_by]} #{sort[:order]}").page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

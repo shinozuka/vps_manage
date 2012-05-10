@@ -5,7 +5,11 @@
   <div id="content_list">
     <table class="index">
       <tr>
-        <th><%= t('activerecord.attributes.project.name') %></th>
+        <th>
+          <%= t('activerecord.attributes.project.name') %>
+          <%= link_to t('page.asc'), url_for(params.merge(:sort_by => 'name', :order => 'asc')) %>
+          <%= link_to t('page.desc'), url_for(params.merge(:sort_by => 'name', :order => 'desc')) %>
+        </th>
         <th><%= t('activerecord.attributes.project.note') %></th>
         <th></th>
       </tr>

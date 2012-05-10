@@ -5,7 +5,11 @@
   <div id="content_list">
     <table class="index">
       <tr>
-        <th><%= t('activerecord.attributes.virtual_environment.name') %></th>
+        <th>
+          <%= t('activerecord.attributes.virtual_environment.name') %>
+          <%= link_to t('page.asc'), url_for(params.merge(:sort_by => 'name', :order => 'asc')) %>
+          <%= link_to t('page.desc'), url_for(params.merge(:sort_by => 'name', :order => 'desc')) %>
+        </th>
         <th><%= t('activerecord.models.machine') %></th>
         <th><%= t('activerecord.attributes.virtual_environment.ip') %></th>
         <th><%= t('activerecord.attributes.virtual_environment.tap') %></th>
