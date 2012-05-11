@@ -71,7 +71,7 @@ div#content{
   clear: both;
 }
 div#content_detail{
-  width: 700px;
+  width: 850px;
   float: left;
   padding: 10px;
 }
@@ -104,6 +104,7 @@ table.index{
 }
 td, th{
   border-bottom: 1px solid #e2e8e8;
+  border-right: 1px dotted #fff;
   padding: 5px;
   word-break: break-all
 }

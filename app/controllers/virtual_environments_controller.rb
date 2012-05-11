@@ -5,7 +5,20 @@ class VirtualEnvironmentsController < ApplicationController
     case params[:sort_by]
     when 'name'
       sort[:sort_by] = 'name'
+    when 'machine'
+      sort[:sort_by] = 'machine_id'
+    when 'ip'
+      sort[:sort_by] = 'ip'
+    when 'tap'
+      sort[:sort_by] = 'tap'
+    when 'mac'
+      sort[:sort_by] = 'mac'
+    when 'vnc'
+      sort[:sort_by] = 'vnc'
+    when 'image_name'
+      sort[:sort_by] = 'image_name'
     end
+
     case params[:order]
     when 'asc'
       sort[:order] = 'asc'

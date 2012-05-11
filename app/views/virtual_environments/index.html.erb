@@ -10,12 +10,36 @@
           <%= link_to image_tag('arrow_up.png', :alt => t('page.asc'), :title => t('page.asc')), url_for(params.merge(:sort_by => 'name', :order => 'asc')) %>
           <%= link_to image_tag('arrow_down.png', :alt => t('page.desc'), :title => t('page.desc')), url_for(params.merge(:sort_by => 'name', :order => 'desc')) %>
         </th>
-        <th><%= t('activerecord.models.machine') %></th>
-        <th><%= t('activerecord.attributes.virtual_environment.ip') %></th>
-        <th><%= t('activerecord.attributes.virtual_environment.tap') %></th>
-        <th><%= t('activerecord.attributes.virtual_environment.mac') %></th>
-        <th><%= t('activerecord.attributes.virtual_environment.vnc') %></th>
-        <th><%= t('activerecord.attributes.virtual_environment.image_name') %></th>
+        <th>
+          <%= t('activerecord.models.machine') %>
+          <%= link_to image_tag('arrow_up.png', :alt => t('page.asc'), :title => t('page.asc')), url_for(params.merge(:sort_by => 'machine', :order => 'asc')) %>
+          <%= link_to image_tag('arrow_down.png', :alt => t('page.desc'), :title => t('page.desc')), url_for(params.merge(:sort_by => 'machine', :order => 'desc')) %>
+        </th>
+        <th>
+          <%= t('activerecord.attributes.virtual_environment.ip') %>
+          <%= link_to image_tag('arrow_up.png', :alt => t('page.asc'), :title => t('page.asc')), url_for(params.merge(:sort_by => 'ip', :order => 'asc')) %>
+          <%= link_to image_tag('arrow_down.png', :alt => t('page.desc'), :title => t('page.desc')), url_for(params.merge(:sort_by => 'ip', :order => 'desc')) %>
+        </th>
+        <th>
+          <%= t('activerecord.attributes.virtual_environment.tap') %>
+          <%= link_to image_tag('arrow_up.png', :alt => t('page.asc'), :title => t('page.asc')), url_for(params.merge(:sort_by => 'tap', :order => 'asc')) %>
+          <%= link_to image_tag('arrow_down.png', :alt => t('page.desc'), :title => t('page.desc')), url_for(params.merge(:sort_by => 'tap', :order => 'desc')) %>
+        </th>
+        <th>
+          <%= t('activerecord.attributes.virtual_environment.mac') %>
+          <%= link_to image_tag('arrow_up.png', :alt => t('page.asc'), :title => t('page.asc')), url_for(params.merge(:sort_by => 'mac', :order => 'asc')) %>
+          <%= link_to image_tag('arrow_down.png', :alt => t('page.desc'), :title => t('page.desc')), url_for(params.merge(:sort_by => 'mac', :order => 'desc')) %>
+        </th>
+        <th>
+          <%= t('activerecord.attributes.virtual_environment.vnc') %>
+          <%= link_to image_tag('arrow_up.png', :alt => t('page.asc'), :title => t('page.asc')), url_for(params.merge(:sort_by => 'vnc', :order => 'asc')) %>
+          <%= link_to image_tag('arrow_down.png', :alt => t('page.desc'), :title => t('page.desc')), url_for(params.merge(:sort_by => 'vnc', :order => 'desc')) %>
+        </th>
+        <th>
+          <%= t('activerecord.attributes.virtual_environment.image_name') %>
+          <%= link_to image_tag('arrow_up.png', :alt => t('page.asc'), :title => t('page.asc')), url_for(params.merge(:sort_by => 'image_name', :order => 'asc')) %>
+          <%= link_to image_tag('arrow_down.png', :alt => t('page.desc'), :title => t('page.desc')), url_for(params.merge(:sort_by => 'image_name', :order => 'desc')) %>
+        </th>
         <th></th>
       </tr>
 
