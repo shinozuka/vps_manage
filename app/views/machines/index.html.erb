@@ -7,8 +7,8 @@
       <tr>
         <th>
           <%= t('activerecord.attributes.machine.name') %>
-          <%= link_to t('page.asc'), url_for(params.merge(:sort_by => 'name', :order => 'asc')) %>
-          <%= link_to t('page.desc'), url_for(params.merge(:sort_by => 'name', :order => 'desc')) %>
+          <%= link_to image_tag('arrow_up.png', :alt => t('page.asc'), :title => t('page.asc')), url_for(params.merge(:sort_by => 'name', :order => 'asc')) %>
+          <%= link_to image_tag('arrow_down.png', :alt => t('page.desc'), :title => t('page.desc')), url_for(params.merge(:sort_by => 'name', :order => 'desc')) %>
         </th>
         <th><%= t('activerecord.attributes.machine.cpu') %></th>
         <th><%= t('activerecord.attributes.machine.memory') %></th>
