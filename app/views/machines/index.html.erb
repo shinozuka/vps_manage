@@ -6,13 +6,27 @@
     <table class="index">
       <tr>
         <th>
-          <%= t('activerecord.attributes.machine.name') %>
-          <%= link_to image_tag('arrow_up.png', :alt => t('page.asc'), :title => t('page.asc')), url_for(params.merge(:sort_by => 'name', :order => 'asc')) %>
-          <%= link_to image_tag('arrow_down.png', :alt => t('page.desc'), :title => t('page.desc')), url_for(params.merge(:sort_by => 'name', :order => 'desc')) %>
+          <% if params[:sort_by] == 'name' and params[:order] == 'asc'%>
+            <%= link_to t('activerecord.attributes.machine.name'), params.merge(:sort_by => 'name', :order => 'desc') %>
+          <% else%>
+            <%= link_to t('activerecord.attributes.machine.name'), params.merge(:sort_by => 'name', :order => 'asc') %>
+          <% end %>
         </th>
-        <th><%= t('activerecord.attributes.machine.cpu') %></th>
-        <th><%= t('activerecord.attributes.machine.memory') %></th>
-        <th></th>
+        <th>
+          <% if params[:sort_by] == 'cpu' and params[:order] == 'asc'%>
+            <%= link_to t('activerecord.attributes.machine.cpu'), params.merge(:sort_by => 'cpu', :order => 'desc') %>
+          <% else %>
+            <%= link_to t('activerecord.attributes.machine.cpu'), params.merge(:sort_by => 'cpu', :order => 'asc') %>
+          <% end %>
+        </th>
+        <th>
+          <% if params[:sort_by] == 'memory' and params[:order] == 'asc'%>
+            <%= link_to t('activerecord.attributes.machine.memory'), params.merge(:sort_by => 'memory', :order => 'desc') %>
+          <% else %>
+            <%= link_to t('activerecord.attributes.machine.memory'), params.merge(:sort_by => 'memory', :order => 'asc') %>
+          <% end %>
+        </th>
+        <th class="action_column"></th>
       </tr>
 
       <% @machines.each do |machine| %>
@@ -21,8 +35,8 @@
           <td><%= machine.cpu %></td>
           <td><%= machine.memory %></td>
           <td>
-            <%= link_to t('page.edit'), edit_machine_path(machine) %>
-            <%= link_to t('page.destroy'), machine, confirm: t('page.are_you_sure'), method: :delete if machine.destroy? %>
+            <%= link_to image_tag('paperpencil32.png', :size => '16x16', :alt => t('page.edit'), :title => t('page.edit')), edit_machine_path(machine) %>
+            <%= link_to image_tag('stop32.png', :size => '16x16', :alt => t('page.destroy'), :title => t('page.destroy')), machine, confirm: t('page.are_you_sure'), method: :delete if machine.destroy? %>
           </td>
         </tr>
       <% end %>

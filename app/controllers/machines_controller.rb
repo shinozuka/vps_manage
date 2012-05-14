@@ -6,7 +6,12 @@ class MachinesController < ApplicationController
     case params[:sort_by]
     when 'name'
       sort[:sort_by] = 'name'
+    when 'cpu'
+      sort[:sort_by] = 'cpu'
+    when 'memory'
+      sort[:sort_by] = 'memory'
     end    
+
     case params[:order]
     when 'asc'
       sort[:order] = 'asc'

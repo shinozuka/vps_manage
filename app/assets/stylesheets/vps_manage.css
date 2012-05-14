@@ -71,7 +71,7 @@ div#content{
   clear: both;
 }
 div#content_detail{
-  width: 850px;
+  width: 750px;
   float: left;
   padding: 10px;
 }
@@ -110,8 +110,19 @@ td, th{
 }
 th {
   color: #ffffff;
-  background: #0099cc;
+  background: #666;
 }
+th a, th a:visited {
+  color: #fff;
+}
+th a:hover {
+  color: magenta;
+
+}
+th.action_column {
+  width: 45px;
+}
+
 tr:hover {
 background: #f5fc8d;
 }

@@ -6,12 +6,14 @@
     <table class="index">
       <tr>
         <th>
-          <%= t('activerecord.attributes.project.name') %>
-          <%= link_to image_tag('arrow_up.png', :alt => t('page.asc'), :title => t('page.asc')), url_for(params.merge(:sort_by => 'name', :order => 'asc')) %>
-          <%= link_to image_tag('arrow_down.png', :alt => t('page.desc'), :title => t('page.desc')), url_for(params.merge(:sort_by => 'name', :order => 'desc')) %>
+          <% if params[:sort_by] == 'name' and params[:order] == 'asc'%>
+            <%= link_to t('activerecord.attributes.machine.name'), params.merge(:sort_by => 'name', :order => 'desc') %>
+          <% else%>
+            <%= link_to t('activerecord.attributes.machine.name'), params.merge(:sort_by => 'name', :order => 'asc') %>
+          <% end %>
         </th>
         <th><%= t('activerecord.attributes.project.note') %></th>
-        <th></th>
+        <th class="action_column"></th>
       </tr>
 
       <% @projects.each do |project| %>
@@ -19,8 +21,8 @@
           <td><%= link_to project.name, project %></td>
           <td><%= project.note %></td>
           <td>
-            <%= link_to t('page.edit'), edit_project_path(project) %>
-            <%= link_to t('page.destroy'), project, confirm: t('page.are_you_sure'), method: :delete %>
+            <%= link_to image_tag('paperpencil32.png', :size => '16x16', :alt => t('page.edit'), :title => t('page.edit')), edit_project_path(project) %>
+            <%= link_to image_tag('stop32.png', :size => '16x16', :alt => t('page.destroy'), :title => t('page.destroy')), project, confirm: t('page.are_you_sure'), method: :delete %>
           </td>
         </tr>
       <% end %>
