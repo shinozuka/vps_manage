@@ -2,6 +2,7 @@ body{
   margin-left: 5px;
   margin-right: 5px;
   text-align: left;
+  background: #A0D5D6;
 }
 
 a.hover{:background-color: transparent}
@@ -43,6 +44,9 @@ h4{
   margin-bottom: 10px;
 }
 
+#page_title {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQANfv1b8Z0QWAwlwc3cwwgVhAiBFYEFkAbAgugBIEADcVxNnc7mNTgAAAABJRU5ErkJggg==) repeat;
+}
 #required {
   color: #ff0000;
 }
@@ -64,16 +68,36 @@ li{
   padding-bottom: 3px;
 }
 
+div.navibar li {
+  padding: 10px 0;
+  float: left;
+  display: block;
+  font-weight: bold;
+  width: 100px;
+  text-align: center;
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+}
+.navi_on { background: #fff; }
+.navi_on a { text-decoration:none; }
+.navi_on a:link { color: #000; }
+.navi_on a:visited { color: #000; }
+.navi_off { background: #789AA1; }
+.navi_off a:link { text-decoration:none; }
+.navi_off a:link { color: #fff; }
+.navi_off a:visited { color: #fff; }
+
 div#content{
-  padding-top: 8px;
-  padding-left: 10px;
+  padding-top: 0px;
   padding-right: 4px;
   clear: both;
 }
 div#content_detail{
   width: 750px;
   float: left;
-  padding: 10px;
+  padding: 15px;
+  background: #fff;
 }
 div#content_list{
   word-wrap: normal;
@@ -81,14 +105,19 @@ div#content_list{
 div#submenu{
   margin-left: 10px;
   width: 190px;
-  padding: 5px;
+  padding: 5px 0 5px 30px;
   float: left;
+  border: 1px solid #AD9A27;
+  background: #fff;
 }
 
 div.header_and_footer{
   padding: 5px;
   clear: both;
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAJ/Pu/+zwjjgzgsvK6MYAEYB8RmROaABAAK4Q+uZfoR0QAAAABJRU5ErkJggg==) repeat;
+  background: #A0D5D6;
+}
+div.header_and_footer a{
+  color: #fff;
 }
 
 div.copyright{
@@ -110,13 +139,13 @@ td, th{
 }
 th {
   color: #ffffff;
-  background: #666;
+  background: #304345;
 }
 th a, th a:visited {
   color: #fff;
 }
 th a:hover {
-  color: magenta;
+  color: #CC2738;
 
 }
 th.action_column {
@@ -127,8 +156,8 @@ tr:hover {
 background: #f5fc8d;
 }
 .line0{
-  background: white;
+  background: #fff;
 }
 .line1{
-  background: #f0f3f3;
+  background: #DCEBDD;
 }

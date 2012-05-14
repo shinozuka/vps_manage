@@ -1,7 +1,21 @@
 <div class="menu">
   <div class="navibar">
-    <%= link_to t('activerecord.models.virtual_environment'), virtual_environments_path %>
-    <%= link_to t('activerecord.models.project'), projects_path %>
-    <%= link_to t('activerecord.models.machine'), machines_path %>
+    <ul>
+      <% if controller_name.singularize == 'virtual_environment' %>
+        <li class="navi_on"><%= link_to t('activerecord.models.virtual_environment'), virtual_environments_path %></li>
+      <% else %>
+        <li class="navi_off"><%= link_to t('activerecord.models.virtual_environment'), virtual_environments_path %></li>
+      <% end %>
+      <% if controller_name.singularize == 'project' %>
+        <li class="navi_on"><%= link_to t('activerecord.models.project'), projects_path %></li>
+      <% else %>
+        <li class="navi_off"><%= link_to t('activerecord.models.project'), projects_path %></li>
+      <% end %>
+      <% if controller_name.singularize == 'machine' %>
+        <li class="navi_on"><%= link_to t('activerecord.models.machine'), machines_path %></li>
+      <% else %>
+        <li class="navi_off"><%= link_to t('activerecord.models.machine'), machines_path %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
