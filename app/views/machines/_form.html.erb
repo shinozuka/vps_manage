@@ -1,31 +1,24 @@
 <%= form_for(@machine) do |f| %>
-  <% if @machine.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= t(:header, :model => t(:machine, :scope => [:activerecord, :models]), :count => @machine.errors.count, :scope => [:activerecord, :errors, :template]) %></h2>
-
-      <ul>
-      <% @machine.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= f.label :name %><abbr id="required">*</abbr><br />
     <%= f.text_field :name %>
+    <%= error_message_on(:machine, :name, t('activerecord.attributes.machine.name')) %>
   </div>
   <div class="field">
     <%= f.label :cpu %><br />
     <%= f.text_field :cpu %>
+    <%= error_message_on(:machine, :cpu, t('activerecord.attributes.machine.cpu')) %>
   </div>
   <div class="field">
     <%= f.label :memory %><br />
     <%= f.text_field :memory %>
+    <%= error_message_on(:machine, :memory, t('activerecord.attributes.machine.memory')) %>
   </div>
   <div class="field">
     <%= f.label :note %><br />
     <%= f.text_area :note %>
+    <%= error_message_on(:machine, :note, t('activerecord.attributes.machine.note')) %>
   </div>
   <div class="actions">
     <%= f.submit %>

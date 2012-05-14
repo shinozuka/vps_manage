@@ -32,10 +32,13 @@ div {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
-  display: table; }
+  display: inline; 
+  input {
+  background: pink;  } }
+.formError {
+  color: red; }
 
-#error_explanation {
+#errorExplanation {
   width: 450px;
   border: 2px solid red;
   padding: 7px;
