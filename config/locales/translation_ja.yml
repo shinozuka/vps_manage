@@ -18,7 +18,7 @@ ja:
         image_name: イメージ名
         ip: IPアドレス
         mac: MACアドレス
-        name: ドメイン名
+        name: ホスト名
         note: 注記
         tap: TAP
         vnc: VNC番号
