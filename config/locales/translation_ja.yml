@@ -43,6 +43,7 @@ ja:
     desc: "降順"
     system_name: "VPS MANAGE"
     copyright: ""
+    not_found: "404 NOT FOUND"
 
   title:
     index: "の一覧"
