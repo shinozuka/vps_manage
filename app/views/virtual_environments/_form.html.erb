@@ -36,6 +36,20 @@
       <%= f.text_field :image_name %>
       <%= error_message_on(:virtual_environment, :image_name, t('activerecord.attributes.virtual_environment.image_name')) %>
     </div>
+    <div class="field">
+      <%= f.label :contact %><br />
+      <%= f.text_field :contact %>
+      <%= error_message_on(:virtual_environment, :contact, t('activerecord.attributes.virtual_environment.contact')) %>
+    </div>
+    <div class="field">
+      <%= f.label :expired_at %><br />
+      <% unless @virtual_environment.expired_at %>
+        <%= f.text_field :expired_at, :placeholder => "#{t('page.example')}: #{t('page.example_date')}", :class => 'date_field' %>
+      <% else %>
+        <%= f.text_field :expired_at, :value => @virtual_environment.expired_at.strftime('%Y-%m-%d'), :placeholder => "#{t('page.example')}: #{t('page.example_date')}", :class => 'date_field' %>
+      <% end %>
+      <%= error_message_on(:virtual_environment, :expired_at, t('activerecord.attributes.virtual_environment.expired_at')) %>
+    </div>
   </div>
 
   <div>
@@ -55,7 +69,7 @@
       <%= error_message_on(:virtual_environment, :note, t('activerecord.attributes.virtual_environment.note')) %>
     </div>
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit :disable_with => t('page.wait') %>
     </div>
   </div>
 <% end %>

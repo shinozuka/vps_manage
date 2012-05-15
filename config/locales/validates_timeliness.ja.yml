@@ -1,0 +1,16 @@
+ja:
+  errors:
+    messages:
+      invalid_date: "は存在しない日付です。"
+      invalid_time: "は存在しない時刻です。"
+      invalid_datetime: "は存在しない日時です。"
+      is_at: "は %{restriction}でなければいけません。"
+      before: "は %{restriction}より前を指定してください。"
+      on_or_before: "は %{restriction}以前を指定してください。"
+      after: "は %{restriction}より後を指定してください。"
+      on_or_after: "は %{restriction}以降を指定してください。"
+  validates_timeliness:
+    error_value_formats:
+      date: '%Y-%m-%d'
+      time: '%H:%M:%S'
+      datetime: '%Y-%m-%d %H:%M:%S'

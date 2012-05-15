@@ -43,6 +43,16 @@
 </p>
 
 <p>
+  <b><%= t('activerecord.attributes.virtual_environment.contact') %>:</b>
+  <%= @virtual_environment.contact %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.virtual_environment.expired_at') %>:</b>
+  <%= l(@virtual_environment.expired_at, :format => :only_date) if @virtual_environment.expired_at %>
+</p>
+
+<p>
   <b><%= t('page.created_at') %>:</b>
   <%= l(@virtual_environment.created_at) %>
 </p>

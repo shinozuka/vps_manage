@@ -17,6 +17,8 @@ class VirtualEnvironmentsController < ApplicationController
       sort[:sort_by] = 'vnc'
     when 'image_name'
       sort[:sort_by] = 'image_name'
+    when 'expired_at'
+      sort[:sort_by] = 'expired_at'
     end
 
     case params[:order]

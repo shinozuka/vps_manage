@@ -6,8 +6,10 @@ class VirtualEnvironment < ActiveRecord::Base
   validates_presence_of :name
   validates_numericality_of :tap, :vnc, :allow_blank => true
   validates_uniqueness_of :name, :ip, :tap, :mac, :vnc, :allow_blank => true
+  #validates_date :expired_at, :allow_blank => true
+  #validate :check_expired_at
 
-  attr_accessible :image_name, :ip, :mac, :machine_id, :name, :note, :tap, :vnc
+  attr_accessible :image_name, :ip, :mac, :machine_id, :name, :note, :tap, :vnc, :contact, :expired_at
 
   def self.per_page
     10
