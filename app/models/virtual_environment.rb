@@ -5,7 +5,8 @@ class VirtualEnvironment < ActiveRecord::Base
 
   validates_presence_of :name
   validates_numericality_of :tap, :vnc, :allow_blank => true
-  validates_uniqueness_of :name, :ip, :tap, :mac, :vnc, :allow_blank => true
+  validates_uniqueness_of :name, :ip, :mac, :allow_blank => true
+  validate :check_vnc
   #validates_date :expired_at#, :allow_blank => true
 
   attr_accessible :image_name, :ip, :mac, :machine_id, :name, :note, :tap, :vnc, :contact, :expired_at
@@ -19,5 +20,10 @@ class VirtualEnvironment < ActiveRecord::Base
     project_ids.each do |id|
       self.projects << Project.find(id) rescue nil
     end if project_ids
+  end
+
+  def check_vnc
+   return unless vnc
+   errors.add(:vnc, I18n.t('errors.messages.taken')) if VirtualEnvironment.where(:machine_id => machine_id, :vnc => vnc).first
   end
 end
