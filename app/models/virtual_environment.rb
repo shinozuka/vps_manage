@@ -9,7 +9,7 @@ class VirtualEnvironment < ActiveRecord::Base
   validate :check_vnc
   #validates_date :expired_at#, :allow_blank => true
 
-  attr_accessible :image_name, :ip, :mac, :machine_id, :name, :note, :tap, :vnc, :contact, :expired_at
+  attr_accessible :image_name, :ip, :mac, :machine_id, :name, :note, :tap, :vnc, :contact, :expired_at, :before_vnc
 
   def self.per_page
     10
@@ -24,6 +24,10 @@ class VirtualEnvironment < ActiveRecord::Base
 
   def check_vnc
    return unless vnc
+
+   before_vnc = VirtualEnvironment.find(self.id).vnc rescue nil
+   return if before_vnc and before_vnc == vnc
+
    errors.add(:vnc, I18n.t('errors.messages.taken')) if VirtualEnvironment.where(:machine_id => machine_id, :vnc => vnc).first
   end
 end
