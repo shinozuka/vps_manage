@@ -24,9 +24,14 @@ class VirtualEnvironment < ActiveRecord::Base
 
   def check_vnc
    return unless vnc
+   return unless machine_id
 
-   before_vnc = VirtualEnvironment.find(self.id).vnc rescue nil
-   return if before_vnc and before_vnc == vnc
+   before_virtual_environment = VirtualEnvironment.find(self.id) rescue nil
+   if before_virtual_environment
+     before_vnc = before_virtual_environment.vnc
+     before_machine_id = before_virtual_environment.machine_id
+     return if before_vnc == vnc and before_machine_id == machine_id
+   end
 
    errors.add(:vnc, I18n.t('errors.messages.taken')) if VirtualEnvironment.where(:machine_id => machine_id, :vnc => vnc).first
   end
