@@ -9,7 +9,7 @@ class VirtualEnvironment < ActiveRecord::Base
   validate :check_vnc
   #validates_date :expired_at#, :allow_blank => true
 
-  attr_accessible :image_name, :ip, :mac, :machine_id, :name, :note, :tap, :vnc, :contact, :expired_at, :before_vnc
+  attr_accessible :image_name, :ip, :mac, :machine_id, :name, :note, :tap, :vnc, :contact, :expired_at
 
   def self.per_page
     10
